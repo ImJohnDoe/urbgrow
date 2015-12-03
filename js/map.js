@@ -8,11 +8,31 @@ function initMap() {
     "use strict";
     map = L.map('map').setView([userloc.lat, userloc.lon], 13);
     
-    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+    L.tileLayer('http://otile{s}.mqcdn.com/tiles/1.0.0/{type}/{z}/{x}/{y}.{ext}', {
+	type: 'sat',
+	ext: 'jpg',
+	attribution: 'Tiles Courtesy of <a href="http://www.mapquest.com/">MapQuest</a> &mdash; Portions Courtesy NASA/JPL-Caltech and U.S. Depart. of Agriculture, Farm Service Agency',
+	subdomains: '1234'
+}).addTo(map);
+    
+    //L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    //    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    //}).addTo(map);
 
-    L.marker([38.56, -121.5]).addTo(map)
+    var LeafIcon = L.Icon.extend({
+        options: {
+            shadowUrl: 'http://cdn.leafletjs.com/leaflet/v0.7.7/images/marker-shadow.png',
+            iconSize:     [38, 95],
+            shadowSize:   [50, 64],
+            iconAnchor:   [22, 94],
+            shadowAnchor: [4, 62],
+            popupAnchor:  [-3, -76]
+        }
+    });
+
+    var greenHouse = new LeafIcon({iconUrl: 'images/favicon-noback.png'});
+    
+    L.marker([38.56, -121.5,{icon: greenHouse}]).addTo(map)
         .bindPopup('Your Urban Farm,<br> Grow!')
         .openPopup();
 }
@@ -57,6 +77,7 @@ function onEachFeature(feature, layer) {
 }
 
 function styleFeature(feature) {
+    "use strict";
     switch (feature.properties.Availability) {
         case 'barter': return {fillColor: "#ff0000"};
         case 'free':   return {fillColor: "#0000ff"};
