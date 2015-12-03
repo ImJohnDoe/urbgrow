@@ -38,10 +38,22 @@ function filter() {
         var open = '<tr>',
             close = '/tr>',
             crop = '<td>' + value.Crop + '</td>',
-            health = '<td>' + value["cancer.superfood"] + '</td>',
+            health = '<td>' + healthkey(value) + '</td>',
             tips = '<td>' + '<a href="' + value["Growing.tips"] + '"> Growing Tips' + '</td>';
             //button =  '<td><a class="button small round file" href="' + value.link + '"><span> Download ' + value.type + '</span></a></td>';
         
         $crops.append(open + crop + health + tips + close);
     });
+}
+
+function healthkey(value) {
+    var text = "";
+    if (value["cancer.superfood"] == 1) {
+        text = text.concat("C")
+    }
+    if (value["diabetes.superfood"] == 1) {
+        text = text.concat(" D")
+    };
+    
+    return(text);
 }
