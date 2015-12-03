@@ -61,5 +61,6 @@ $(document).ready(function () {
         geojsonFeature = json;
         growers.addData(geojsonFeature);
     });
+    loadcrops();
 
 });

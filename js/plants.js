@@ -1,4 +1,6 @@
 /* Code to handle Plant Selection */
+var crops,
+    $crops;
 
 function soiltip(value) {
     "use strict";
@@ -17,8 +19,29 @@ function soiltip(value) {
     
 }
 
-function filter() {
+function loadcrops() {
     "use strict";
     //Does nothing for now, needs to filter
+    $.getJSON('crop.json', function (json) {
+        crops = json;
+        //use underscore here
+        //results()
+    });
+    $crops = $("#crops");
     
+}
+
+function filter() {
+    "use strict";
+    $("#crops tbody > tr").remove();
+    $.each(crops, function (index, value) {
+        var open = '<tr>',
+            close = '/tr>',
+            crop = '<td>' + value.Crop + '</td>',
+            health = '<td>' + value["cancer.superfood"] + '</td>',
+            tips = '<td>' + '<a href="' + value["Growing.tips"] + '"> Growing Tips' + '</td>';
+            //button =  '<td><a class="button small round file" href="' + value.link + '"><span> Download ' + value.type + '</span></a></td>';
+        
+        $crops.append(open + crop + health + tips + close);
+    });
 }
