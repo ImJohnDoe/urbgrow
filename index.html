@@ -105,7 +105,7 @@
       </div>
 
       <div class="u-full-width">
-        <label for="exampleRecipientInput">If outdoors, in the ground, what's your soil type (link to tip)</label>
+        <label for="exampleRecipientInput">If outdoors, in the ground, what's your soil type (<a href="(http://www.dummies.com/how-to/content/urban-farming-how-to-determine-your-soil-type.html">Find your type</a>)</label>
         <select class="u-full-width" id="sPotted" onchange="soiltip(this);filter();">
           <option selected value="" placeholder="" style="color:#DCDDDB;">Pick Type</option> 
           <option value="1">loam</option>
@@ -190,12 +190,26 @@
       </div>
   </div>
 
- <div class="one-half column">
-        <label>Yield (in pounds (lbs.))</label>
+<div class="row">
+    <div class="one-half column">
+        <label>Yield (in pounds - lbs.)</label>
         <input class="one-half column" type="text" placeholder="Pounds Harvested">
+    </div>
+    <div class="one-half column">
+        <label for="exampleRecipientInput">Do you want to share produce?</label>
+        <select id="sPotted" onchange="soiltip(this);filter();">
+          <option selected value="0">No</option> 
+          <option value="1">Free</option>
+          <option value="2">Barter</option>
+          <option value="3">For Sale</option>
+        </select>
       </div>
-  </div>
+</div>
       
+  <div class="row">
+        <label for="exampleRecipientInput">Upload a weekly photo here. Or take a photo of your plant before harvest.</label>
+  </div>
+
   <div class="row">
         <label for="exampleRecipientInput">Does your plant look stressed? Upload a picture here.</label>
   </div>
@@ -209,10 +223,17 @@
       </div>
   </div>
 
-  
-   
+      
+<div class="row">
+  <button class="button-primary">Post Record</button>
+</div>
 
-  Track your plant's growth. Upload a weekly photo here. Or take a photo of your plant before harvest. Show off your hardwork. 
+
+<div class="row">
+ <h4>Past records.</h4>
+</div>
+      
+   Show off your hardwork. 
     
      <a href="http://www.facebook.com"><i class="fa fa-facebook-official fa-2x"></i></a>
   <a href="http://www.twitter.com"><i class="fa fa-twitter-square fa-2x"></i></a>
@@ -220,10 +241,7 @@
 
     
  </div>
-</div>  
-    
- </div>
-</div>
+
     
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->

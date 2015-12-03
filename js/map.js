@@ -1,5 +1,5 @@
 var map,
-    userloc = {"lat": 38.5725, "lon": -121.4680, "acc": 0},
+    userloc = {"lat": 38.56, "lon": -121.5, "acc": 0},
     locoptions = {timeout: 5},
     growers;
 
@@ -11,7 +11,7 @@ function initMap() {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    L.marker([38.5725, -121.4680]).addTo(map)
+    L.marker([38.56, -121.5]).addTo(map)
         .bindPopup('An Urban Farm<br> Grow!')
         .openPopup();
 }
