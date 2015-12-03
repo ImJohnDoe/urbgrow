@@ -86,7 +86,7 @@
 
       <div class="six columns">
         <label for="exampleRecipientInput">How soon would you like to harvest?</label>
-        <select id="sWhen">
+        <select id="sWhen" onchange="filter();">
           <option selected value="" placeholder="" style="color:#DCDDDB;">Pick Type</option> 
           <option value="Option 1">6 months or fewer</option>
           <option value="Option 2">over 6 months</option>
@@ -95,7 +95,7 @@
 
       <div class="six columns">
         <label for="exampleRecipientInput">Where are you planning to plant?</label>
-        <select id="sWhere">
+        <select id="sWhere" onchange="filter();">
           <option selected value="" placeholder="" style="color:#DCDDDB;">Pick Type</option> 
           <option value="1">indoors, pots</option>
           <option value="2">outdoors, pots</option>
@@ -148,7 +148,7 @@
       </tbody>
     </table>
     </div>    
-    <div class="tip">Big yard? Have you considered Honeybees (Honey), Chickens/Quails (eggs), etc... </div></br>
+    <div class="tip">Big yard? what about <a href="http://www.almanac.com/blog/home-health/bees">Honeybees</a>, <a href="http://thepoultryguide.com">Chickens</a>/Quails, etc... </div></br>
     <div class="tip">Easy Access to a flat roof? Container gardening might be an option.</div>
     
 
@@ -241,7 +241,7 @@
 
 
 <div class="row">
- <h4>Past records.</h4>
+ <h4>Review your grow.</h4>
     <div class="one-half column">
         <img src="images/fake_table.jpg">
     </div>
