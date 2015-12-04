@@ -6,7 +6,7 @@ var map,
 
 function initMap() {
     "use strict";
-    map = L.map('map').setView([userloc.lat, userloc.lon], 13);
+    map = L.map('map').setView([userloc.lat, userloc.lon], 15);
     
     L.tileLayer('http://otile{s}.mqcdn.com/tiles/1.0.0/{type}/{z}/{x}/{y}.{ext}', {
 	type: 'sat',
