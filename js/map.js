@@ -90,8 +90,9 @@ function onEachFeature(feature, layer) {
 function styleFeature(feature) {
     "use strict";
     switch (feature.properties.Availability) {
-        case 'barter': return {fillColor: "#ff0000"};
-        case 'free':   return {fillColor: "#0000ff"};
+        case 'barter': return {color: "#ff0000"};
+        case 'for sale':   return {color: "#0000ff"};
+        case 'free':   return {color: "#ccffcc"};
     }
 }
 
